@@ -35,6 +35,10 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - parser-combinators
+    # Fix Warning about packages being reused: https://stackoverflow.com/questions/67519851/multiple-files-use-the-same-module-name
+    when:
+      - condition: false
+        other-modules: Paths_parser_combinators
 
 tests:
   parser-combinators-test:
