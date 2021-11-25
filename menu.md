@@ -23,9 +23,9 @@ String -> FirstName
 
 # Let's build!
 
-
+- [ ] Create parser wrapper (String -> Either String a)
 - [ ] parse any character
-  - [ ] failure
+- [ ] What if we want to parse to characters? (String -> Either String (a, String))
 - [ ] parse specific character
  - [ ] parse 'A'
  - [ ] parse 'B'
