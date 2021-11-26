@@ -159,3 +159,21 @@ bindP parserA f =
             Right (a, restA) ->
                 let parserB = f a
                 in runParser parserB restA
+
+-- What if we wanted to optionally match an element?
+-- opt :: Parser a -> Parser (Maybe a)
+
+-- Create an instance of Functor for Parser
+-- replace usages of `mapP` with `fmap`
+
+-- Create an instance of Applicative for Parser
+-- replace usages of pureP and lift2 with `pure` and `liftA2`
+
+-- Create an instance of Alternative for Parser
+-- replace usages of `orElse` with `<|>`
+
+-- Create an instance of Monad for Parser
+-- replace usages of `bindP` with `>>=`
+
+-- Write a parser that parses the following
+> " PERSON1/FeatureD eeee444 [gone] Random weird comments"
