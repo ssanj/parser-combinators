@@ -41,7 +41,6 @@ is char =
 
 
 -- What if we want to parse alternative characters?
-
 orElse :: Parser a -> Parser a -> Parser a
 orElse parserA parserB =
     Parser $ \input ->
@@ -103,8 +102,33 @@ sequenceP (p:rest) = lift2 (:) p (sequenceP rest)
 stringP :: String -> Parser String
 stringP chars = sequenceP (map is chars)
 
+-- mapP :: (a -> b) -> Parser a -> Parser b
+-- mapP f parserA =
+--     Parser $ \input ->
+--         case runParser parserA input of
+--             Left e -> Left e
+--             Right (a, rest) -> Right (f a, rest)
 
 
+-- What if we want to run a parser as many times as possible?
+many :: Parser a -> Parser [a]
+many parserA =
+    let fallback = pureP []
+    in lift2 (:) parserA (many parserA) `orElse` fallback
+
+-- What if we want to run a parser one or more times?
+many1 :: Parser a -> Parser [a]
+many1 parserA = lift2 (:) parserA (many parserA)
 
 
+-- What if we want to exclude spaces?
+space :: Parser Char
+space = is ' '
 
+
+-- What if we want to ignore the result of the first parser?
+ignoreFirst :: Parser a -> Parser b -> Parser b
+ignoreFirst parserA parserB = lift2 (\_ b -> b) parserA parserB
+
+ignoreSecond :: Parser a -> Parser b -> Parser a
+ignoreSecond parserA parserB = lift2 (\a _ -> a) parserA parserB
