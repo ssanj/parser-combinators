@@ -2,6 +2,8 @@
 
 module Lib where
 
+import Text.Read (readMaybe)
+
 
 -- Create Parser type
 newtype Parser a = Parser { runParser :: String -> Either String (a, String) }
@@ -53,13 +55,13 @@ orElse parserA parserB =
 
 
 
-failP :: Parser a
-failP = Parser $ \_ -> Left "parser failed"
+failP :: String -> Parser a
+failP error = Parser $ \_ -> Left error
 
 
 -- Can we make choosing alternative parsers easier?
 choose :: [Parser a] -> Parser a
-choose [] = failP
+choose [] = failP "parser failed"
 choose (x: rest) = foldl (\a v -> a `orElse` v) x rest
 
 
@@ -102,12 +104,14 @@ sequenceP (p:rest) = lift2 (:) p (sequenceP rest)
 stringP :: String -> Parser String
 stringP chars = sequenceP (map is chars)
 
--- mapP :: (a -> b) -> Parser a -> Parser b
--- mapP f parserA =
---     Parser $ \input ->
---         case runParser parserA input of
---             Left e -> Left e
---             Right (a, rest) -> Right (f a, rest)
+
+-- What if we wanted to change the value of an existing parser?
+mapP :: (a -> b) -> Parser a -> Parser b
+mapP f parserA =
+    Parser $ \input ->
+        case runParser parserA input of
+            Left e -> Left e
+            Right (a, rest) -> Right (f a, rest)
 
 
 -- What if we want to run a parser as many times as possible?
@@ -132,3 +136,26 @@ ignoreFirst parserA parserB = lift2 (\_ b -> b) parserA parserB
 
 ignoreSecond :: Parser a -> Parser b -> Parser a
 ignoreSecond parserA parserB = lift2 (\a _ -> a) parserA parserB
+
+
+-- What if we want to change our parser based on a result of a previous parser?
+-- Convert a String parser to an Int parser?
+-- use `readMaybe :: Read a => String -> Maybe a` from Text.Read
+numbers :: Parser String -> Parser Int
+numbers parserStr =
+    let convertToInt :: String -> Parser Int
+        convertToInt str =
+            case readMaybe str of
+                Just n  -> pureP n
+                Nothing -> failP $ "Could not convert " <> str <> " to a number"
+    in parserStr `bindP` convertToInt
+
+
+bindP :: Parser a -> (a -> Parser b) -> Parser b
+bindP parserA f =
+    Parser $ \input ->
+        case runParser parserA input of
+            Left e -> Left e
+            Right (a, restA) ->
+                let parserB = f a
+                in runParser parserB restA
