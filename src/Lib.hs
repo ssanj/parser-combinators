@@ -9,6 +9,8 @@ import Text.Read (readMaybe)
 newtype Parser a = Parser { runParser :: String -> Either String (a, String) }
 
 
+-- TODO: Write example scenarios in comments so you can just copy-paste them into the repl
+
 -- Parser for any character
 character :: Parser Char
 character =
@@ -161,7 +163,15 @@ bindP parserA f =
                 in runParser parserB restA
 
 -- What if we wanted to optionally match an element?
--- opt :: Parser a -> Parser (Maybe a)
+opt :: Parser a -> Parser (Maybe a)
+opt parserA =  mapP Just parserA `orElse` pureP Nothing
+
+-- What if we want to partially apply a function with more than two parameters?
+-- lift2 :: (a -> b -> c) -> Parser a -> Parser b -> Parser c
+-- mapP        ::(a -> b) -> Parser a -> Parser b
+applyP :: Parser (a -> b) -> Parser a -> Parser b
+applyP parserAB parserA = parserAB `bindP` (\f -> mapP f parserA)
+
 
 -- Create an instance of Functor for Parser
 -- replace usages of `mapP` with `fmap`
@@ -176,4 +186,4 @@ bindP parserA f =
 -- replace usages of `bindP` with `>>=`
 
 -- Write a parser that parses the following
-> " PERSON1/FeatureD eeee444 [gone] Random weird comments"
+-- > " PERSON1/FeatureD eeee444 [gone] Random weird comments"
