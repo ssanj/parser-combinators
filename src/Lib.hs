@@ -162,7 +162,14 @@ bindP parserA f =
                 let parserB = f a
                 in runParser parserB restA
 
--- What if we wanted to optionally match an element?
+-- What if we wanted to optionally match an element without failing?
+-- let p1 = many1 digit
+-- let p2 = numbers p1
+-- runParser p2 "1234"    -- Parser (1234)
+-- runParser p2 "ABC1234" -- Failure
+--
+-- runParser (opt p2) "1234"    -- Parser (Just 1234)
+-- runParser (opt p2) "ABC1234" -- Parser Nothing
 opt :: Parser a -> Parser (Maybe a)
 opt parserA =  mapP Just parserA `orElse` pureP Nothing
 
