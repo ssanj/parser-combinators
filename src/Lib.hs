@@ -9,8 +9,6 @@ import Text.Read (readMaybe)
 newtype Parser a = Parser { runParser :: String -> Either String (a, String) }
 
 
--- TODO: Write example scenarios in comments so you can just copy-paste them into the repl
-
 -- Parser for any character
 character :: Parser Char
 character =
