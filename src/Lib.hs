@@ -17,20 +17,6 @@ character =
             []      -> Left "End of input found"
             (c : rest) -> Right (c, rest)
 
-
--- What if we want to parse consecutive characters?
-
-andThen :: Parser a -> Parser b -> Parser (a, b)
-andThen parserA parserB =
-    Parser $ \input ->
-        case runParser parserA input of
-            Left e -> Left e
-            Right (a, restA) ->
-                case runParser parserB restA of
-                    Left e -> Left e
-                    Right (b, restB) -> Right ((a, b), restB)
-
-
 -- What if we want to match a specific character ?
 is :: Char -> Parser Char
 is char =
@@ -40,6 +26,19 @@ is char =
             Right (x, rest) ->
                 if x == char then Right (x, rest)
                 else Left $ "Did not match " <> (show char)
+
+
+
+-- What if we want to parse consecutive characters?
+andThen :: Parser a -> Parser b -> Parser (a, b)
+andThen parserA parserB =
+    Parser $ \input ->
+        case runParser parserA input of
+            Left e -> Left e
+            Right (a, restA) ->
+                case runParser parserB restA of
+                    Left e -> Left e
+                    Right (b, restB) -> Right ((a, b), restB)
 
 
 -- What if we want to parse alternative characters?
@@ -94,7 +93,7 @@ lift2 f parserA parserB =
 pureP :: a -> Parser a
 pureP a = Parser $ \input -> Right (a, input)
 
--- Can we consecutively use a list of parsers?
+-- What if we want a run consecutive parses and return list of results back?
 sequenceP :: [Parser a] -> Parser [a]
 sequenceP [] = pureP []
 sequenceP (p:rest) = lift2 (:) p (sequenceP rest)
