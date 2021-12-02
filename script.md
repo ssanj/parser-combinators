@@ -270,7 +270,7 @@ runParser digit "A1BC" -- show error
 
 ## Running consecutive parsers and returning a list of results
 
--- Discuss how awkward it is to andThen multiple parsers
+-- Discuss how awkward it is to andThen multiple parsers due to tuples
 
 ### Sample Data for discussion
 
@@ -291,8 +291,131 @@ lift2 f parserA parserB =
             Right ((a, b), rest) -> Right (f a b, rest)
 ```
 
+start with return an empty [] into a parsers for the base case
+Explain why andThen won't work here
+Lead into lift2
+
 ```haskell
 sequenceP :: [Parser a] -> Parser [a]
 sequenceP [] = Parser $ \input -> ([], input)
-sequenceP (p : rest) = p `andThen` sequenceP rest
+sequenceP (p : rest) = lift2 (\p r -> p : r) p (sequenceP rest)
+```
+
+
+### Sample Data for sequenceP
+
+```haskell
+let p1 = sequenceP [lowercase, uppercase, digit, character]
+runParser p1 "aB1*AF"
+runParser p1 "1AB1*AF" -- Show failure
+runParser p1 ""        -- Show failure
+```
+
+
+## Matching a String parser
+
+sequenceP with characters is hard to work with
+
+```haskell
+sequenceP [is 'z', is 'e', is 'n']
+```
+
+we want an easier way
+
+show how String is actually a [Char]
+
+```haskell
+-- stringP :: [Char] -> Parser [Char]
+stringP :: String -> Parser String
+stringP chars = sequenceP (map is chars)
+```
+
+### Sample Data for stringP
+
+```haskell
+runParser (stringP "zendesk") "zendesk is cool"
+runParser (stringP "zendesk") ""
+```
+
+---
+
+
+## Change the value of an existing parser
+
+
+Use andThen as an example
+
+```haskell
+let p1 = character `andThen` character
+:t p1 -- p1 :: Parser (Char, Char)
+```
+
+Parser (Char, Char) -> Parser String
+
+Why not just use lift2 ?
+
+
+```haskell
+mapP :: (a -> b) -> Parser a -> Parser b
+mapP f parserA =
+    Parser $ \input ->
+        case runParser parserA input of
+            Left e -> Left e
+            Right (a, rest) -> Right (f a, rest)
+```
+
+### Sample Data for mapP
+
+```haskell
+let p1 = character `andThen` character
+:t p1 -- p1 :: Parser (Char, Char)
+let p2 = mapP (\(c1, c2) -> c1  : c2 : []) p1
+:t p2
+runParser p2 "ABCD"
+
+let p2 = mapP (\(c1, c2) -> c2  : c1 : []) p1
+runParser p2 "ABCD"
+```
+
+
+## Running a parser as many times as possible
+
+Get as many digits as possible
+
+```haskell
+many :: Parser a -> Parser [a]
+many parserA =
+    let fallback = pureP [] -- we can use pureP
+    in lift2 (\p r -> p : r) parserA (many parserA) `orElse` fallback
+```
+We can also define pureP as part of this
+
+```haskell
+pureP :: a -> Parser a
+pureP a = Parser $ \input -> Right (a, input)
+```
+
+
+### Sample Data for many
+
+```haskell
+runParser (many digit) "1234543534543ABNCD"
+runParser (many digit) "" -- Still passes
+```
+
+
+## Running a parser at least one or more times
+
+
+```haskell
+many1 :: Parser a -> Parser [a]
+many1 parserA = lift2 (\p r -> p : r) parserA (many parserA)
+```
+
+### Sample Data for many1
+
+```haskell
+runParser (many1 digit) "1234543534543ABNCD" -- passes
+runParser (many1 digit) "1A234543534543ABNCD" -- fails
+runParser (many1 digit) "" -- fails
 ```
