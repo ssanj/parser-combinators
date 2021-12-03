@@ -162,19 +162,10 @@ bindP parserA f =
                 in runParser parserB restA
 
 -- What if we wanted to optionally match an element without failing?
--- let p1 = many1 digit
--- let p2 = numbers p1
--- runParser p2 "1234"    -- Parser (1234)
--- runParser p2 "ABC1234" -- Failure
---
--- runParser (opt p2) "1234"    -- Parser (Just 1234)
--- runParser (opt p2) "ABC1234" -- Parser Nothing
 opt :: Parser a -> Parser (Maybe a)
 opt parserA =  mapP Just parserA `orElse` pureP Nothing
 
 -- What if we want to partially apply a function with more than two parameters?
--- lift2 :: (a -> b -> c) -> Parser a -> Parser b -> Parser c
--- mapP        ::(a -> b) -> Parser a -> Parser b
 applyP :: Parser (a -> b) -> Parser a -> Parser b
 applyP parserAB parserA = lift2 (\f a -> f a) parserAB parserA
 
@@ -195,6 +186,8 @@ instance Functor Parser where
     fmap :: (a -> b) -> Parser a -> Parser b
     fmap = mapP
 
+-- Create an instance of Applicative for Parser
+-- replace usages of pureP and lift2 with `pure` and `liftA2`
 instance Applicative Parser where
     pure :: a -> Parser a
     pure = pureP
@@ -202,6 +195,8 @@ instance Applicative Parser where
     (<*>) :: Parser (a -> b) -> Parser a -> Parser b
     (<*>) = applyP
 
+-- Create an instance of Alternative for Parser
+-- replace usages of `orElse` with `<|>`
 instance A.Alternative Parser where
 
     empty :: Parser a
@@ -210,6 +205,8 @@ instance A.Alternative Parser where
     (<|>) :: Parser a -> Parser a -> Parser a
     (<|>) = orElse
 
+-- Create an instance of Monad for Parser
+-- replace usages of `bindP` with `>>=`
 instance Monad Parser where
     return :: a -> Parser a
     return = pure
@@ -229,11 +226,6 @@ parserPerson =
             age     <- ageP
             return $ Person name surname age
 
--- Create an instance of Applicative for Parser
--- replace usages of pureP and lift2 with `pure` and `liftA2`
 
--- Create an instance of Alternative for Parser
--- replace usages of `orElse` with `<|>`
 
--- Create an instance of Monad for Parser
--- replace usages of `bindP` with `>>=`
+
