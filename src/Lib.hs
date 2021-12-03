@@ -1,8 +1,10 @@
 {-# LANGUAGE ScopedTypeVariables #-}
+{-# LANGUAGE InstanceSigs #-}
 
 module Lib where
 
 import Text.Read (readMaybe)
+import qualified Control.Applicative as A
 
 
 -- Create Parser type
@@ -188,6 +190,44 @@ data Person = Person { name :: String, surname:: String, age :: Int } deriving S
 
 -- Create an instance of Functor for Parser
 -- replace usages of `mapP` with `fmap`
+
+instance Functor Parser where
+    fmap :: (a -> b) -> Parser a -> Parser b
+    fmap = mapP
+
+instance Applicative Parser where
+    pure :: a -> Parser a
+    pure = pureP
+
+    (<*>) :: Parser (a -> b) -> Parser a -> Parser b
+    (<*>) = applyP
+
+instance A.Alternative Parser where
+
+    empty :: Parser a
+    empty = failP "failed parser"
+
+    (<|>) :: Parser a -> Parser a -> Parser a
+    (<|>) = orElse
+
+instance Monad Parser where
+    return :: a -> Parser a
+    return = pure
+
+    (>>=) :: Parser a -> (a -> Parser b) -> Parser b
+    (>>=) = bindP
+
+
+parserPerson :: Parser Person
+parserPerson =
+    let nameP = (many space) `ignoreFirst` (many1 (lowercase `orElse` uppercase))
+        ageP = (many space) `ignoreFirst` (numbers $ many1 digit)
+    in
+        do
+            name    <- nameP
+            surname <- nameP
+            age     <- ageP
+            return $ Person name surname age
 
 -- Create an instance of Applicative for Parser
 -- replace usages of pureP and lift2 with `pure` and `liftA2`
