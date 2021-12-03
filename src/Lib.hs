@@ -174,8 +174,17 @@ opt parserA =  mapP Just parserA `orElse` pureP Nothing
 -- lift2 :: (a -> b -> c) -> Parser a -> Parser b -> Parser c
 -- mapP        ::(a -> b) -> Parser a -> Parser b
 applyP :: Parser (a -> b) -> Parser a -> Parser b
-applyP parserAB parserA = parserAB `bindP` (\f -> mapP f parserA)
+applyP parserAB parserA = lift2 (\f a -> f a) parserAB parserA
 
+
+-- Write a parser that parses the following
+data Person = Person { name :: String, surname:: String, age :: Int } deriving Show
+
+-- data Person = Person { name :: String, surname :: String, age :: Int}
+-- > "Jo Blogs 25 blah"
+
+
+-- Extra
 
 -- Create an instance of Functor for Parser
 -- replace usages of `mapP` with `fmap`
@@ -188,6 +197,3 @@ applyP parserAB parserA = parserAB `bindP` (\f -> mapP f parserA)
 
 -- Create an instance of Monad for Parser
 -- replace usages of `bindP` with `>>=`
-
--- Write a parser that parses the following
--- > " PERSON1/FeatureD eeee444 [gone] Random weird comments"

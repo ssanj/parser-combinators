@@ -419,3 +419,131 @@ runParser (many1 digit) "1234543534543ABNCD" -- passes
 runParser (many1 digit) "1A234543534543ABNCD" -- fails
 runParser (many1 digit) "" -- fails
 ```
+
+
+## Ignoring the result of the first parser
+
+```haskell
+ignoreFirst :: Parser a -> Parser b -> Parser b
+ignoreFirst parserA parserB = lift2 (\_ b -> b) parserA parserB
+```
+
+
+### Sample Data for ignoreFirst
+
+```haskell
+let p1 = (many digit) `ignoreFirst` (many lowercase)
+runParser p1 "1234234abcdf%#$%@#"
+```
+
+
+## Ignoring the result of the second parser
+
+```haskell
+ignoreSecond :: Parser a -> Parser b -> Parser a
+ignoreSecond parserA parserB = lift2 (\a _ -> a) parserA parserB
+```
+
+### Sample Data for ignoreSecond
+
+```haskell
+let p1 = (many digit) `ignoreSecond` (many lowercase)
+runParser p1 "1234234abcdf%#$%@#"
+```
+
+---
+
+
+## Convert a String -> Int
+
+```haskell
+numbers :: Parser String -> Parser Int
+numbers parserStr =
+  let convertToInt :: String -> Parser Int
+  let convertToInt str =
+        case readMaybe str of
+          Just n  -> pureP n
+          Nothing -> failP $ "Could not convert " <> str <> " into a number"
+  in parserString `bindP` convertToInt -- we need something that takes these two things
+```
+
+```haskell
+bindP :: Parser a -> (a -> Parser b) -> Parser b
+bindP parserA f =
+  Parser $ \input ->
+    case runParser parserA input of
+      Left e -> Left e
+      Right (a, restA) ->
+        let parserB = f a
+        in runParser parserB restA
+```
+
+
+### Sample Data for bindP
+
+```haskell
+let p1 = many character
+:t p1
+let p2 = numbers p1
+:t p2
+
+runParser p2  "1234" -- success
+runParser p2  "1A234" -- failure
+runParser p2  "" -- failure
+```
+
+## Optionally parsing a value
+
+We want success when the parser does not match
+
+start with the `orElse` case
+
+```haskell
+opt :: Parser a -> Parser (Maybe a)
+opt parserA =  mapP Just parserA `orElse` pureP Nothing
+```
+
+### Sample data for optionally parsing a value
+
+```haskell
+let p1 = many1 digit
+runParser p1 "1234"    -- Parser (1234)
+runParser p1 "ABC1234" -- Failure
+
+runParser (opt p1) "1234"    -- Parser (Just 1234)
+runParser (opt p1) "ABC1234" -- Parser Nothing
+```
+
+## Partially applying a Parser
+
+```haskell
+applyP :: Parser (a -> b) -> Parser a -> Parser b
+applyP parserAB parserA = lift2 (\f a -> f a) parserAB parserA
+```
+
+### Sample data for partially applying a function within a Parser
+
+```haskell
+--- create person
+:t Person -- Person :: String -> String -> Int -> Person
+Person "Jo" "Blogs" 25
+
+-- partially apply
+:t Person "Jo" "Blogs" -- Person "Jo" "Blogs" :: Int -> Person
+
+let nameP = (many space) `ignoreFirst` (many1 (lowercase `orElse` uppercase))
+let ageP = (many space) `ignoreFirst` (numbers $ many1 digit)
+let personP = (pureP Person) `applyP` nameP `applyP` nameP `applyP` ageP
+
+runParser personP "Jo Blogs 25 whatever"
+
+--- Alternatives
+
+let p3 = lift2 Person nameP nameP
+:t p3 -- Parser (Int -> Person)
+
+-- we can't use mapP because we need to use two parsers here p3 + ageP
+let p4 = lift2 (\f a -> f a) p3 ageP
+
+runParser p4 "Jo Blogs 25 whatever"
+```
