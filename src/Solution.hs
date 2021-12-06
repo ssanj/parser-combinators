@@ -2,7 +2,7 @@
 {-# LANGUAGE InstanceSigs #-}
 
 -- Don't export anything because it will clash with Lib
-module Solution() where
+module Solution where
 
 import Text.Read (readMaybe)
 import qualified Control.Applicative as A
