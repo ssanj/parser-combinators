@@ -288,7 +288,7 @@ case either of
 ```
 
 ```scala
-//scala        Either[Left, Right]
+//scala        Either[l, r]
 either match {
   case Left(error)  => ???
   case Right(value) => ???
@@ -429,3 +429,85 @@ def isEmpty[A](list: List[A]): Boolean = {
   }
 }
 ```
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+```haskell
+type String = [Char]
+```
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+```haskell
+-- haskell
+newtype Blah = Blah { someFunction :: String -> Int }
+```
+
+```scala
+// scala
+class Blah(val someFunction: String => Int)
+```
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
