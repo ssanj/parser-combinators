@@ -34,9 +34,7 @@
 <br/>
 <br/>
 
-# Introduction
-
-## What is a parser
+# What is a parser?
 
 > a parser is just a function that consumes less-structured input and produces more-structured output.
 - Alexis King from [Parse Don't Validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
@@ -98,15 +96,12 @@ String -> Bool
 <br/>
 <br/>
 
-## What is a parser combinator
+# What is a Parser Combinator?
 
 - Is a type of parser
 - Is partial function from some input to some output
 - Has a way of signalling failure
 - Simple pieces combined to create more advanced pieces (grammar)
-- Is has combinators: Functions that combine and transform parsers into other parsers
-- The grammar can be expanded
-- We parse each term of our grammar by recursively calling the parsers for each sub-term (Recursive Decent)
 
 
 <br/>
@@ -150,7 +145,13 @@ These features will become clearer when we work through the exercise
 
 ![](images/parser-combinator.png)
 
----
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ![](images/parser-combinator-action.png)
 
@@ -287,6 +288,11 @@ case either of
   Right value -> undefined
 ```
 
+<br/>
+<br/>
+<br/>
+
+
 ```scala
 //scala        Either[l, r]
 either match {
@@ -339,6 +345,10 @@ case option of
   Just value -> undefined
 ```
 
+<br/>
+<br/>
+<br/>
+
 ```scala
 // scala       Option[A]
 option match {
@@ -378,6 +388,11 @@ someFunction "Hello" 1 = undefined
 someFunction "Hello" 2 = undefined
 someFunction str     n = undefined
 ```
+
+<br/>
+<br/>
+<br/>
+
 
 ```scala
 //scala
@@ -419,6 +434,11 @@ isEmpty :: [a] -> Bool
 isEmpty []    = True
 isEmpty (h:t) = False
 ```
+
+<br/>
+<br/>
+<br/>
+
 
 ```scala
 // scala
@@ -484,6 +504,10 @@ type String = [Char]
 -- haskell
 newtype Blah = Blah { someFunction :: String -> Int }
 ```
+
+<br/>
+<br/>
+<br/>
 
 ```scala
 // scala
