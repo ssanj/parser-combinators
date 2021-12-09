@@ -981,11 +981,11 @@ body .markdown-body {
   padding-left: 128px!important;
 }
 
-.markdown-body .lets-build-it {
-  font-size:  3em;
+article h1 {
   text-align: center;
 }
-</style><title>README</title></head><body><article class="markdown-body"><h1 style="text-align: center;">
+
+</style><title>parser-combinators</title></head><body><article class="markdown-body"><h1>
 <a id="user-content-build-you-a-parser-combinator-for-great-good" class="anchor" href="#build-you-a-parser-combinator-for-great-good" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Build you a Parser Combinator for Great Good</h1>
 <br>
 <br>
@@ -1229,13 +1229,6 @@ someFunction str   n   <span class="pl-k">=</span> <span class="pl-ent"><span cl
 <br>
 <br>
 <br>
-<div class="highlight highlight-source-haskell"><pre><span class="pl-c"><span class="pl-c">--</span> haskell     Either l r</span>
-<span class="pl-k">case</span> <span class="pl-c1">either</span> <span class="pl-k">of</span>
-  <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-c1">error</span>  <span class="pl-k">-&gt;</span> <span class="pl-c1">undefined</span>
-  <span class="pl-ent"><span class="pl-c1">Right</span></span> value <span class="pl-k">-&gt;</span> <span class="pl-c1">undefined</span></pre></div>
-<br>
-<br>
-<br>
 <div class="highlight highlight-source-scala"><pre><span class="pl-c"><span class="pl-c">//</span>scala        Either[l, r]</span>
 either <span class="pl-k">match</span> {
   <span class="pl-k">case</span> <span class="pl-en">Left</span>(error)  <span class="pl-k">=&gt;</span> <span class="pl-k">???</span>
@@ -1247,6 +1240,10 @@ either <span class="pl-k">match</span> {
 <br>
 <br>
 <br>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-c"><span class="pl-c">--</span> haskell     Either l r</span>
+<span class="pl-k">case</span> <span class="pl-c1">either</span> <span class="pl-k">of</span>
+  <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-c1">error</span>  <span class="pl-k">-&gt;</span> <span class="pl-c1">undefined</span>
+  <span class="pl-ent"><span class="pl-c1">Right</span></span> value <span class="pl-k">-&gt;</span> <span class="pl-c1">undefined</span></pre></div>
 <br>
 <br>
 <br>
@@ -1275,10 +1272,8 @@ either <span class="pl-k">match</span> {
 <br>
 <br>
 <br>
-<div class="highlight highlight-source-haskell"><pre><span class="pl-c"><span class="pl-c">--</span> haskell     Maybe a</span>
-<span class="pl-k">case</span> option <span class="pl-k">of</span>
-  <span class="pl-ent">Nothing</span>    <span class="pl-k">-&gt;</span> <span class="pl-c1">undefined</span>
-  <span class="pl-ent">Just</span> value <span class="pl-k">-&gt;</span> <span class="pl-c1">undefined</span></pre></div>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -1292,6 +1287,10 @@ option <span class="pl-k">match</span> {
 <br>
 <br>
 <br>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-c"><span class="pl-c">--</span> haskell     Maybe a</span>
+<span class="pl-k">case</span> option <span class="pl-k">of</span>
+  <span class="pl-ent">Nothing</span>    <span class="pl-k">-&gt;</span> <span class="pl-c1">undefined</span>
+  <span class="pl-ent">Just</span> value <span class="pl-k">-&gt;</span> <span class="pl-c1">undefined</span></pre></div>
 <br>
 <br>
 <br>
@@ -1309,11 +1308,8 @@ option <span class="pl-k">match</span> {
 <br>
 <br>
 <br>
-<div class="highlight highlight-source-haskell"><pre><span class="pl-c"><span class="pl-c">--</span> haskell</span>
-<span class="pl-en">someFunction</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Int</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Bool</span></span>
-someFunction <span class="pl-s"><span class="pl-pds">"</span>Hello<span class="pl-pds">"</span></span> <span class="pl-c1">1</span> <span class="pl-k">=</span> <span class="pl-c1">undefined</span>
-someFunction <span class="pl-s"><span class="pl-pds">"</span>Hello<span class="pl-pds">"</span></span> <span class="pl-c1">2</span> <span class="pl-k">=</span> <span class="pl-c1">undefined</span>
-someFunction str     n <span class="pl-k">=</span> <span class="pl-c1">undefined</span></pre></div>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -1330,27 +1326,30 @@ someFunction str     n <span class="pl-k">=</span> <span class="pl-c1">undefined
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <div class="highlight highlight-source-haskell"><pre><span class="pl-c"><span class="pl-c">--</span> haskell</span>
-<span class="pl-en">isEmpty</span> <span class="pl-k">::</span> [<span class="pl-smi">a</span>] <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Bool</span></span>
-isEmpty <span class="pl-c1">[]</span>    <span class="pl-k">=</span> <span class="pl-ent"><span class="pl-c1">True</span></span>
-isEmpty (h<span class="pl-k">:</span>t) <span class="pl-k">=</span> <span class="pl-ent"><span class="pl-c1">False</span></span></pre></div>
+<span class="pl-en">someFunction</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Int</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Bool</span></span>
+someFunction <span class="pl-s"><span class="pl-pds">"</span>Hello<span class="pl-pds">"</span></span> <span class="pl-c1">1</span> <span class="pl-k">=</span> <span class="pl-c1">undefined</span>
+someFunction <span class="pl-s"><span class="pl-pds">"</span>Hello<span class="pl-pds">"</span></span> <span class="pl-c1">2</span> <span class="pl-k">=</span> <span class="pl-c1">undefined</span>
+someFunction str     n <span class="pl-k">=</span> <span class="pl-c1">undefined</span></pre></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -1361,6 +1360,15 @@ isEmpty (h<span class="pl-k">:</span>t) <span class="pl-k">=</span> <span class=
     <span class="pl-k">case</span> (h <span class="pl-k">::</span> t) <span class="pl-k">=&gt;</span> <span class="pl-c1">false</span>
   }
 }</pre></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-c"><span class="pl-c">--</span> haskell</span>
+<span class="pl-en">isEmpty</span> <span class="pl-k">::</span> [<span class="pl-smi">a</span>] <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Bool</span></span>
+isEmpty <span class="pl-c1">[]</span>    <span class="pl-k">=</span> <span class="pl-ent"><span class="pl-c1">True</span></span>
+isEmpty (h<span class="pl-k">:</span>t) <span class="pl-k">=</span> <span class="pl-ent"><span class="pl-c1">False</span></span></pre></div>
 <br>
 <br>
 <br>
@@ -1406,13 +1414,18 @@ isEmpty (h<span class="pl-k">:</span>t) <span class="pl-k">=</span> <span class=
 <br>
 <br>
 <br>
+<div class="highlight highlight-source-scala"><pre><span class="pl-c"><span class="pl-c">//</span> scala</span>
+<span class="pl-k">class</span> <span class="pl-en">Blah</span>(<span class="pl-k">val</span> <span class="pl-smi">someFunction</span><span class="pl-k">:</span> <span class="pl-en">String</span> <span class="pl-k">=&gt;</span> <span class="pl-en">Int</span>) <span class="pl-k">extends</span> <span class="pl-e">AnyVal</span></pre></div>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="highlight highlight-source-haskell"><pre><span class="pl-c"><span class="pl-c">--</span> haskell</span>
 <span class="pl-k">newtype</span> <span class="pl-en">Blah</span> <span class="pl-k">=</span> <span class="pl-ent">Blah</span> <span class="pl-k">{</span> <span class="pl-e">someFunction</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Int</span></span> <span class="pl-k">}</span></pre></div>
 <br>
 <br>
 <br>
-<div class="highlight highlight-source-scala"><pre><span class="pl-c"><span class="pl-c">//</span> scala</span>
-<span class="pl-k">class</span> <span class="pl-en">Blah</span>(<span class="pl-k">val</span> <span class="pl-smi">someFunction</span><span class="pl-k">:</span> <span class="pl-en">String</span> <span class="pl-k">=&gt;</span> <span class="pl-en">Int</span>)</pre></div>
 <br>
 <br>
 <br>
@@ -1432,10 +1445,6 @@ isEmpty (h<span class="pl-k">:</span>t) <span class="pl-k">=</span> <span class=
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-
-<div class="lets-build-it">Let's build it!</div>
-
+<h1>
+<a id="user-content-lets-build-it" class="anchor" href="#lets-build-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Let's Build it!</h1>
 </article></body></html>

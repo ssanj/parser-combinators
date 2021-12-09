@@ -280,19 +280,6 @@ someFunction str   n   = True -- function implementation
 <br/>
 <br/>
 
-
-```haskell
--- haskell     Either l r
-case either of
-  Left error  -> undefined
-  Right value -> undefined
-```
-
-<br/>
-<br/>
-<br/>
-
-
 ```scala
 //scala        Either[l, r]
 either match {
@@ -302,35 +289,7 @@ either match {
 
 ```
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
@@ -339,15 +298,48 @@ either match {
 
 
 ```haskell
--- haskell     Maybe a
-case option of
-  Nothing    -> undefined
-  Just value -> undefined
+-- haskell     Either l r
+case either of
+  Left error  -> undefined
+  Right value -> undefined
 ```
+
 
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 
 ```scala
 // scala       Option[A]
@@ -362,6 +354,16 @@ option match {
 <br/>
 <br/>
 <br/>
+
+```haskell
+-- haskell     Maybe a
+case option of
+  Nothing    -> undefined
+  Just value -> undefined
+```
+
+
+
 <br/>
 <br/>
 <br/>
@@ -374,6 +376,29 @@ option match {
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+```scala
+//scala
+def someFunction(param1: String, param2: Int): Boolean = {
+  (param1, param2) match {
+    case ("Hello", 1) => ???
+    case ("Hello", 2) => ???
+    case (str,     n) => ???
+  }
+}
+```
+
+
 <br/>
 <br/>
 <br/>
@@ -389,39 +414,40 @@ someFunction "Hello" 2 = undefined
 someFunction str     n = undefined
 ```
 
-<br/>
-<br/>
-<br/>
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ```scala
-//scala
-def someFunction(param1: String, param2: Int): Boolean = {
-  (param1, param2) match {
-    case ("Hello", 1) => ???
-    case ("Hello", 2) => ???
-    case (str,     n) => ???
+// scala
+def isEmpty[A](list: List[A]): Boolean = {
+  list match {
+    case Nil      => true
+    case (h :: t) => false
   }
 }
 ```
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
@@ -435,20 +461,7 @@ isEmpty []    = True
 isEmpty (h:t) = False
 ```
 
-<br/>
-<br/>
-<br/>
 
-
-```scala
-// scala
-def isEmpty[A](list: List[A]): Boolean = {
-  list match {
-    case Nil      => true
-    case (h :: t) => false
-  }
-}
-```
 
 <br/>
 <br/>
@@ -500,38 +513,45 @@ type String = [Char]
 <br/>
 <br/>
 
+```scala
+// scala
+class Blah(val someFunction: String => Int) extends AnyVal
+```
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ```haskell
 -- haskell
 newtype Blah = Blah { someFunction :: String -> Int }
 ```
 
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
 
-```scala
-// scala
-class Blah(val someFunction: String => Int)
-```
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+# Let's Build it!
