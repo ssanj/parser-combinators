@@ -84,6 +84,17 @@ uppercase = anyOf ['A' .. 'Z']
 digit :: Parser Char
 digit = anyOf ['0' .. '9']
 
+-- What if we wanted to match character ranges with a single parser?
+satisfyP :: String -> (Char -> Bool) -> Parser Char
+satisfyP message pred =
+    Parser $ \input ->
+        case runParser character input of
+            Left error -> Left error
+            Right (c,rest) ->
+                if pred c then Right (c, rest)
+                else Left $ (show c) <> " did not match predicate:" <> message
+
+
 lift2 :: (a -> b -> c) -> Parser a -> Parser b -> Parser c
 lift2 f parserA parserB =
     Parser $ \input ->

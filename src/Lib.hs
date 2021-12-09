@@ -9,6 +9,7 @@ module Lib where
 
 -- Parser for any character
 
+
 -- What if we want to match a specific character ?
 
 
@@ -20,19 +21,30 @@ module Lib where
 
 -- Can we make choosing alternative parsers easier?
 
+
 -- Can we make choosing alternative parsers from a String?
 
 
 -- Can we only parse lowercase alphabetic characters?
 
--- Can we only parse lowercase alphabetic characters?
+
+-- Can we only parse uppercase alphabetic characters?
+
 
 -- Can we only parse digits?
 
 
+-- What if we wanted to match character ranges with a single parser?
+
+
+-- End of Part 1
+
+
 -- What if we want a run consecutive parses and return list of results back?
 
+
 -- What if we want to parse a String?
+
 
 -- What if we wanted to change the value of an existing parser?
 
@@ -45,6 +57,10 @@ module Lib where
 -- What if we want to exclude spaces?
 
 -- What if we want to ignore the result of the first parser?
+
+
+-- End of Part 2
+
 
 -- What if we want to change our parser based on a result of a previous parser?
 -- Convert a String parser to an Int parser?

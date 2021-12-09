@@ -266,6 +266,35 @@ runParser uppercase "aCD" -- show error
 runParser digit "1ABC"
 runParser digit "A1BC" -- show error
 ```
+
+## Parsing Character ranges with a single parser
+
+```haskell
+satisfyP :: String -> (Char -> Bool) -> Parser Char
+satisfyP message pred =
+    Parser $ \input ->
+        case runParser character input of
+            Left error -> Left error
+            Right (c,rest) ->
+                if pred c then Right (c, rest)
+                else Left $ (show c) <> " did not match predicate:" <> message
+```
+
+
+### Sample data for parsing ranges with a single Parser
+
+Running 26 parsers to figure out if a character is lowercase is quite wasteful. Can we define
+a single parser that does the sample thing?
+
+```haskell
+> let lcalpha = ['a' .. 'z']
+> let p1 = satisfyP "'a'-'z'" (\c -> c `elem` lcalpha)
+
+runParser p1 "aBCD" -- 'a'
+runParser p1 "BCD" -- Left "'D' did not match predicate:'a'-'z'"
+
+```
+
 ---
 
 ## Running consecutive parsers and returning a list of results
