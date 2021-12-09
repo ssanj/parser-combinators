@@ -4,6 +4,32 @@
 - [Walkthrough](https://github.com/ssanj/parser-combinators/blob/main/script.md)
 
 
+## Installation
+
+- [Stack](https://docs.haskellstack.org/en/stable/install_and_upgrade/)
+
+## Running
+
+To start working through the exercises, load src/Lib.hs into GHCi:
+
+```
+stack ghci src/Lib.hs
+```
+
+To continuously build the project:
+
+```
+chmod +x .stack-scripts/*
+
+build
+```
+
+To load solutions to GHCi:
+
+```
+stack ghci src/Solution.hs
+```
+
 ## Inspiration
 
 - [Why Parser Combinators](https://vimeo.com/171704565)

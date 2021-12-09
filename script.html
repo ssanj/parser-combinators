@@ -1,0 +1,1353 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+.markdown-body .octicon-link:before {
+  font: normal normal normal 16px/1 octicons-link;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: '\f05c';
+  vertical-align: middle;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+  margin-top: 5em !important;
+  border-bottom: dotted 1px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+</style><title>script</title></head><body><article class="markdown-body"><h1>
+<a id="user-content-script" class="anchor" href="#script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Script</h1>
+<h2>
+<a id="user-content-create-parser-type" class="anchor" href="#create-parser-type" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create Parser type</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">newtype</span> <span class="pl-en">Parser</span> <span class="pl-k">=</span> <span class="pl-ent">Parser</span> <span class="pl-k">{</span> <span class="pl-e">runParser</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Char</span></span> <span class="pl-k">}</span></pre></div>
+<h2>
+<a id="user-content-create-a-parser-for-any-character" class="anchor" href="#create-a-parser-for-any-character" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create a Parser for any character</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">character</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span>
+character <span class="pl-k">=</span> <span class="pl-c1">undefined</span></pre></div>
+<h3>
+<a id="user-content-implementation-for-character-parser" class="anchor" href="#implementation-for-character-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementation for character parser</h3>
+<p>During the implementation we realize that we need an Either in the result</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">character</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-en"><span class="pl-c1">Char</span></span>
+character <span class="pl-k">=</span>
+    <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span>
+        <span class="pl-k">case</span> input <span class="pl-k">of</span>
+            <span class="pl-c1">[]</span>      <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-s"><span class="pl-pds">"</span>End of input found<span class="pl-pds">"</span></span>
+            (c <span class="pl-k">:</span> _) <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Right</span></span> c</pre></div>
+<p>new parser type:</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">newtype</span> <span class="pl-en">Parser</span> <span class="pl-k">=</span> <span class="pl-ent">Parser</span> <span class="pl-k">{</span> <span class="pl-e">runParser</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Either</span></span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-en"><span class="pl-c1">Char</span></span> <span class="pl-k">}</span></pre></div>
+<h3>
+<a id="user-content-sample-data-for-character-parser" class="anchor" href="#sample-data-for-character-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for character parser</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">:</span>t character
+<span class="pl-k">:</span>t runParser
+
+runParser character <span class="pl-s"><span class="pl-pds">"</span>ABCD<span class="pl-pds">"</span></span></pre></div>
+<p>We notice that the drops the stream and we can't continue from where we left off.</p>
+<p>We realise that we need to keep track of the input:</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">newtype</span> <span class="pl-en">Parser</span> <span class="pl-k">=</span> <span class="pl-ent">Parser</span> <span class="pl-k">{</span> <span class="pl-e">runParser</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Either</span></span> <span class="pl-en"><span class="pl-c1">String</span></span> (<span class="pl-en"><span class="pl-c1">Char</span></span>, <span class="pl-en"><span class="pl-c1">String</span></span>) <span class="pl-k">}</span></pre></div>
+<h2>
+<a id="user-content-matching-on-a-specific-character-1" class="anchor" href="#matching-on-a-specific-character-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Matching on a specific character (1)</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">isA</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span>
+isA <span class="pl-k">=</span>
+    <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span>
+        <span class="pl-k">case</span> runParser character input <span class="pl-k">of</span>
+            <span class="pl-ent"><span class="pl-c1">Left</span></span> e <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-k">$</span> <span class="pl-s"><span class="pl-pds">"</span>Did not match 'A'<span class="pl-pds">"</span></span>
+            <span class="pl-ent"><span class="pl-c1">Right</span></span> (x, rest) <span class="pl-k">-&gt;</span>
+                <span class="pl-k">if</span> x <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>A<span class="pl-pds">'</span></span> <span class="pl-k">then</span> <span class="pl-ent"><span class="pl-c1">Right</span></span> (x, rest)
+                <span class="pl-k">else</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-k">$</span> (<span class="pl-c1">show</span> x) <span class="pl-k">&lt;&gt;</span> <span class="pl-s"><span class="pl-pds">"</span> did not match 'A'<span class="pl-pds">"</span></span></pre></div>
+<h3>
+<a id="user-content-sample-data-for-isa" class="anchor" href="#sample-data-for-isa" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for isA</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">:</span>t isA
+
+runParser isA <span class="pl-s"><span class="pl-pds">"</span>ABCD<span class="pl-pds">"</span></span>
+runParser isA <span class="pl-s"><span class="pl-pds">"</span>BCD<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> show error</span></pre></div>
+<h2>
+<a id="user-content-matching-on-a-specific-character-2" class="anchor" href="#matching-on-a-specific-character-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Matching on a specific character (2)</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">isB</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span>
+isB <span class="pl-k">=</span>
+    <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span>
+        <span class="pl-k">case</span> runParser character input <span class="pl-k">of</span>
+            <span class="pl-ent"><span class="pl-c1">Left</span></span> e <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-k">$</span> <span class="pl-s"><span class="pl-pds">"</span>Did not match 'B'<span class="pl-pds">"</span></span>
+            <span class="pl-ent"><span class="pl-c1">Right</span></span> (x, rest) <span class="pl-k">-&gt;</span>
+                <span class="pl-k">if</span> x <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>B<span class="pl-pds">'</span></span> <span class="pl-k">then</span> <span class="pl-ent"><span class="pl-c1">Right</span></span> (x, rest)
+                <span class="pl-k">else</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-k">$</span> (<span class="pl-c1">show</span> x) <span class="pl-k">&lt;&gt;</span> <span class="pl-s"><span class="pl-pds">"</span> did not match 'B'<span class="pl-pds">"</span></span></pre></div>
+<h3>
+<a id="user-content-sample-data-for-isa-1" class="anchor" href="#sample-data-for-isa-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for isA</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">:</span>t isB
+
+runParser isB <span class="pl-s"><span class="pl-pds">"</span>BCD<span class="pl-pds">"</span></span>
+runParser isB <span class="pl-s"><span class="pl-pds">"</span>CD<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> show error</span></pre></div>
+<h2>
+<a id="user-content-matching-on-a-specific-character-3" class="anchor" href="#matching-on-a-specific-character-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Matching on a specific character (3)</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">is</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">Char</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span>
+is c <span class="pl-k">=</span>
+    <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span>
+        <span class="pl-k">case</span> runParser character input <span class="pl-k">of</span>
+            <span class="pl-ent"><span class="pl-c1">Left</span></span> e <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-k">$</span> <span class="pl-s"><span class="pl-pds">"</span>Did not match <span class="pl-pds">"</span></span> <span class="pl-k">&lt;&gt;</span> (<span class="pl-c1">show</span> c)
+            <span class="pl-ent"><span class="pl-c1">Right</span></span> (x, rest) <span class="pl-k">-&gt;</span>
+                <span class="pl-k">if</span> x <span class="pl-k">==</span> c <span class="pl-k">then</span> <span class="pl-ent"><span class="pl-c1">Right</span></span> (x, rest)
+                <span class="pl-k">else</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-k">$</span> (<span class="pl-c1">show</span> x) <span class="pl-k">&lt;&gt;</span> <span class="pl-s"><span class="pl-pds">"</span> did not match <span class="pl-pds">"</span></span> <span class="pl-k">&lt;&gt;</span> (<span class="pl-c1">show</span> c)</pre></div>
+<p>Remove <code>isA</code> and <code>isB</code></p>
+<h3>
+<a id="user-content-sample-data-for-is" class="anchor" href="#sample-data-for-is" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for is</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">:</span>t is
+
+runParser is <span class="pl-s"><span class="pl-pds">'</span>A<span class="pl-pds">'</span></span> <span class="pl-s"><span class="pl-pds">"</span>ABCD<span class="pl-pds">"</span></span>
+runParser is <span class="pl-s"><span class="pl-pds">'</span>B<span class="pl-pds">'</span></span> <span class="pl-s"><span class="pl-pds">"</span>BCD<span class="pl-pds">"</span></span>
+runParser is <span class="pl-s"><span class="pl-pds">'</span>B<span class="pl-pds">'</span></span> <span class="pl-s"><span class="pl-pds">"</span>CD<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> show error</span></pre></div>
+<h2>
+<a id="user-content-implementing-a-parser-for-consecutive-characters" class="anchor" href="#implementing-a-parser-for-consecutive-characters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementing a parser for consecutive characters</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">andThen</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">b</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> (<span class="pl-smi">a</span>, <span class="pl-smi">b</span>)
+andThen parserA parserB <span class="pl-k">=</span>
+    <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span>
+        <span class="pl-k">case</span> runParser parserA input <span class="pl-k">of</span>
+            <span class="pl-ent"><span class="pl-c1">Left</span></span> e <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> e
+            <span class="pl-ent"><span class="pl-c1">Right</span></span> (a, restA) <span class="pl-k">-&gt;</span>
+                <span class="pl-k">case</span> runParser parserB restA <span class="pl-k">of</span>
+                    <span class="pl-ent"><span class="pl-c1">Left</span></span> e <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> e
+                    <span class="pl-ent"><span class="pl-c1">Right</span></span> (b, restB) <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Right</span></span> ((a, b), restB)</pre></div>
+<p>During the implementation we realize that we need an pair in the result and the result type needs to be polymorphic</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">newtype</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">=</span> <span class="pl-ent">Parser</span> <span class="pl-k">{</span> <span class="pl-e">runParser</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Either</span></span> <span class="pl-en"><span class="pl-c1">String</span></span> (<span class="pl-smi">a</span>, <span class="pl-en"><span class="pl-c1">String</span></span>) <span class="pl-k">}</span></pre></div>
+<p>also rewrite character to return <code>Parser Char</code></p>
+<h3>
+<a id="user-content-sample-data-for-andthen-parser" class="anchor" href="#sample-data-for-andthen-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for andThen parser</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">:</span>t andThen
+
+<span class="pl-k">let</span> p1 <span class="pl-k">=</span> character <span class="pl-k">`andThen`</span> character
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>ABCD<span class="pl-pds">"</span></span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> show error</span></pre></div>
+<h2>
+<a id="user-content-implementing-a-parser-for-alternative-characters" class="anchor" href="#implementing-a-parser-for-alternative-characters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementing a parser for alternative characters</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">orElse</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span>
+orElse parserA parserB <span class="pl-k">=</span>
+    <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span>
+        <span class="pl-k">case</span> runParser parserA input <span class="pl-k">of</span>
+            <span class="pl-ent"><span class="pl-c1">Left</span></span> ea <span class="pl-k">-&gt;</span>
+                <span class="pl-k">case</span> runParser parserB input <span class="pl-k">of</span>
+                    <span class="pl-ent"><span class="pl-c1">Left</span></span> eb <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-k">$</span> ea <span class="pl-k">&lt;&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>, <span class="pl-pds">"</span></span> <span class="pl-k">&lt;&gt;</span> eb
+                    <span class="pl-ent"><span class="pl-c1">Right</span></span> (b, restB) <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Right</span></span> (b, restB)
+            <span class="pl-ent"><span class="pl-c1">Right</span></span> (a, restA) <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Right</span></span> (a, restA)</pre></div>
+<h3>
+<a id="user-content-sample-data-for-orelse-parser" class="anchor" href="#sample-data-for-orelse-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for orElse parser</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">:</span>t orElse
+
+<span class="pl-k">let</span> p1 <span class="pl-k">=</span> (is <span class="pl-s"><span class="pl-pds">'</span>A<span class="pl-pds">'</span></span>) <span class="pl-k">`orElse`</span> (is <span class="pl-s"><span class="pl-pds">'</span>B<span class="pl-pds">'</span></span>)
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>ABCD<span class="pl-pds">"</span></span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>BACD<span class="pl-pds">"</span></span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>CE<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> show error</span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>   <span class="pl-c"><span class="pl-c">--</span> show error</span></pre></div>
+<h2>
+<a id="user-content-implementing-a-choosing-from-a-list-of-parsers" class="anchor" href="#implementing-a-choosing-from-a-list-of-parsers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementing a choosing from a list of parsers</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">choose</span> <span class="pl-k">::</span> [<span class="pl-en">Parser</span> <span class="pl-smi">a</span>] <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span>
+choose <span class="pl-c1">[]</span> <span class="pl-k">=</span> failP <span class="pl-s"><span class="pl-pds">"</span>parser failed<span class="pl-pds">"</span></span>
+choose (x<span class="pl-k">:</span> rest) <span class="pl-k">=</span> <span class="pl-c1">foldl</span> (<span class="pl-k">\</span>a v <span class="pl-k">-&gt;</span> a <span class="pl-k">`orElse`</span> v) x rest</pre></div>
+<h3>
+<a id="user-content-sample-data-for-orelse-parser-1" class="anchor" href="#sample-data-for-orelse-parser-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for orElse parser</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">:</span>t choose
+
+<span class="pl-k">let</span> p1 <span class="pl-k">=</span> choose [is <span class="pl-s"><span class="pl-pds">'</span>A<span class="pl-pds">'</span></span>, is <span class="pl-s"><span class="pl-pds">'</span>B<span class="pl-pds">'</span></span>]
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>ABCD<span class="pl-pds">"</span></span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>BACD<span class="pl-pds">"</span></span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>CE<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> show error</span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>   <span class="pl-c"><span class="pl-c">--</span> show error</span></pre></div>
+<p>We also need to define failP to handle our error</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">failP</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span>
+failP <span class="pl-c1">error</span> <span class="pl-k">=</span> <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>_ <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-c1">error</span></pre></div>
+<h2>
+<a id="user-content-implementing-choosing-a-character-parse-from-a-string" class="anchor" href="#implementing-choosing-a-character-parse-from-a-string" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementing choosing a character parse from a String</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">anyOf</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-en"><span class="pl-c1">Char</span></span>
+anyOf chars <span class="pl-k">=</span> choose (<span class="pl-c1">map</span> is chars)</pre></div>
+<h3>
+<a id="user-content-sample-data-for-anyof-parser" class="anchor" href="#sample-data-for-anyof-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for anyOf parser</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">:</span>t choose
+
+<span class="pl-k">let</span> p1 <span class="pl-k">=</span> anyOf <span class="pl-s"><span class="pl-pds">"</span>ABC<span class="pl-pds">"</span></span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>ABCD<span class="pl-pds">"</span></span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>BACD<span class="pl-pds">"</span></span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>CBAD<span class="pl-pds">"</span></span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>CE<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> show error</span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>   <span class="pl-c"><span class="pl-c">--</span> show error</span></pre></div>
+<h2>
+<a id="user-content-parsing-character-ranges" class="anchor" href="#parsing-character-ranges" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parsing character ranges</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">lowercase</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-en"><span class="pl-c1">Char</span></span>
+lowercase <span class="pl-k">=</span> anyOf [<span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span> <span class="pl-k">..</span> <span class="pl-s"><span class="pl-pds">'</span>z<span class="pl-pds">'</span></span>]</pre></div>
+<pre lang="haskel"><code>uppercase :: Parser Char
+uppercase = anyOf ['A' .. 'Z']
+</code></pre>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">digit</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-en"><span class="pl-c1">Char</span></span>
+digit <span class="pl-k">=</span> anyOf [<span class="pl-s"><span class="pl-pds">'</span>0<span class="pl-pds">'</span></span> <span class="pl-k">..</span> <span class="pl-s"><span class="pl-pds">'</span>9<span class="pl-pds">'</span></span>]</pre></div>
+<h3>
+<a id="user-content-sample-data-for-parsing-ranges" class="anchor" href="#sample-data-for-parsing-ranges" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for parsing ranges</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">:</span>t lowercase
+<span class="pl-k">:</span>t uppercase
+<span class="pl-k">:</span>t digit
+
+runParser lowercase <span class="pl-s"><span class="pl-pds">"</span>aBCD<span class="pl-pds">"</span></span>
+runParser lowercase <span class="pl-s"><span class="pl-pds">"</span>BCD<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> show error</span>
+
+runParser uppercase <span class="pl-s"><span class="pl-pds">"</span>BaCD<span class="pl-pds">"</span></span>
+runParser uppercase <span class="pl-s"><span class="pl-pds">"</span>aCD<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> show error</span>
+
+runParser digit <span class="pl-s"><span class="pl-pds">"</span>1ABC<span class="pl-pds">"</span></span>
+runParser digit <span class="pl-s"><span class="pl-pds">"</span>A1BC<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> show error</span></pre></div>
+<h2>
+<a id="user-content-parsing-character-ranges-with-a-single-parser" class="anchor" href="#parsing-character-ranges-with-a-single-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parsing Character ranges with a single parser</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">satisfyP</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> (<span class="pl-en"><span class="pl-c1">Char</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en"><span class="pl-c1">Bool</span></span>) <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-en"><span class="pl-c1">Char</span></span>
+satisfyP message <span class="pl-c1">pred</span> <span class="pl-k">=</span>
+    <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span>
+        <span class="pl-k">case</span> runParser character input <span class="pl-k">of</span>
+            <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-c1">error</span> <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-c1">error</span>
+            <span class="pl-ent"><span class="pl-c1">Right</span></span> (c,rest) <span class="pl-k">-&gt;</span>
+                <span class="pl-k">if</span> <span class="pl-c1">pred</span> c <span class="pl-k">then</span> <span class="pl-ent"><span class="pl-c1">Right</span></span> (c, rest)
+                <span class="pl-k">else</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> <span class="pl-k">$</span> (<span class="pl-c1">show</span> c) <span class="pl-k">&lt;&gt;</span> <span class="pl-s"><span class="pl-pds">"</span> did not match predicate:<span class="pl-pds">"</span></span> <span class="pl-k">&lt;&gt;</span> message</pre></div>
+<h3>
+<a id="user-content-sample-data-for-parsing-ranges-with-a-single-parser" class="anchor" href="#sample-data-for-parsing-ranges-with-a-single-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for parsing ranges with a single Parser</h3>
+<p>Running 26 parsers to figure out if a character is lowercase is quite wasteful. Can we define
+a single parser that does the sample thing?</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k"><span class="pl-c1">&gt;</span></span> <span class="pl-k">let</span> lcalpha <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span> <span class="pl-k">..</span> <span class="pl-s"><span class="pl-pds">'</span>z<span class="pl-pds">'</span></span>]
+<span class="pl-k"><span class="pl-c1">&gt;</span></span> <span class="pl-k">let</span> p1 <span class="pl-k">=</span> satisfyP <span class="pl-s"><span class="pl-pds">"</span>'a'-'z'<span class="pl-pds">"</span></span> (<span class="pl-k">\</span>c <span class="pl-k">-&gt;</span> c <span class="pl-k">`elem`</span> lcalpha)
+
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>aBCD<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> 'a'</span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>BCD<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> Left "'D' did not match predicate:'a'-'z'"</span>
+</pre></div>
+<hr>
+<h2>
+<a id="user-content-running-consecutive-parsers-and-returning-a-list-of-results" class="anchor" href="#running-consecutive-parsers-and-returning-a-list-of-results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running consecutive parsers and returning a list of results</h2>
+<p>-- Discuss how awkward it is to andThen multiple parsers due to tuples</p>
+<h3>
+<a id="user-content-sample-data-for-discussion" class="anchor" href="#sample-data-for-discussion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Data for discussion</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">let</span> p1 <span class="pl-k">=</span> lowercase <span class="pl-k">`andThen`</span> uppercase <span class="pl-k">`andThen`</span> digit <span class="pl-k">`andThen`</span> character
+<span class="pl-k">:</span>t p1
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>aB1AF<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> Right (((('a','B'),'1'),'A'),"F")</span></pre></div>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">lift2</span> <span class="pl-k">::</span> (<span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-smi">b</span> <span class="pl-k">-&gt;</span> <span class="pl-smi">c</span>) <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">b</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">c</span>
+lift2 f parserA parserB <span class="pl-k">=</span>
+    <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span>
+    <span class="pl-k">let</span> parserAB <span class="pl-k">=</span> parserA <span class="pl-k">`andThen`</span> parserB
+    <span class="pl-k">in</span> <span class="pl-k">case</span> runParser parserAB input <span class="pl-k">of</span>
+            <span class="pl-ent"><span class="pl-c1">Left</span></span> e <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> e
+            <span class="pl-ent"><span class="pl-c1">Right</span></span> ((a, b), rest) <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Right</span></span> (f a b, rest)</pre></div>
+<p>start with return an empty [] into a parsers for the base case
+Explain why andThen won't work here
+Lead into lift2</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">sequenceP</span> <span class="pl-k">::</span> [<span class="pl-en">Parser</span> <span class="pl-smi">a</span>] <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> [<span class="pl-smi">a</span>]
+sequenceP <span class="pl-c1">[]</span> <span class="pl-k">=</span> <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span> (<span class="pl-c1">[]</span>, input)
+sequenceP (p <span class="pl-k">:</span> rest) <span class="pl-k">=</span> lift2 (<span class="pl-k">\</span>p r <span class="pl-k">-&gt;</span> p <span class="pl-k">:</span> r) p (sequenceP rest)</pre></div>
+<h3>
+<a id="user-content-sample-data-for-sequencep" class="anchor" href="#sample-data-for-sequencep" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Data for sequenceP</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">let</span> p1 <span class="pl-k">=</span> sequenceP [lowercase, uppercase, digit, character]
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>aB1*AF<span class="pl-pds">"</span></span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>1AB1*AF<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> Show failure</span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>        <span class="pl-c"><span class="pl-c">--</span> Show failure</span></pre></div>
+<h2>
+<a id="user-content-matching-a-string-parser" class="anchor" href="#matching-a-string-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Matching a String parser</h2>
+<p>sequenceP with characters is hard to work with</p>
+<div class="highlight highlight-source-haskell"><pre>sequenceP [is <span class="pl-s"><span class="pl-pds">'</span>z<span class="pl-pds">'</span></span>, is <span class="pl-s"><span class="pl-pds">'</span>e<span class="pl-pds">'</span></span>, is <span class="pl-s"><span class="pl-pds">'</span>n<span class="pl-pds">'</span></span>]</pre></div>
+<p>we want an easier way</p>
+<p>show how String is actually a [Char]</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-c"><span class="pl-c">--</span> stringP :: [Char] -&gt; Parser [Char]</span>
+<span class="pl-en">stringP</span> <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-en"><span class="pl-c1">String</span></span>
+stringP chars <span class="pl-k">=</span> sequenceP (<span class="pl-c1">map</span> is chars)</pre></div>
+<h3>
+<a id="user-content-sample-data-for-stringp" class="anchor" href="#sample-data-for-stringp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Data for stringP</h3>
+<div class="highlight highlight-source-haskell"><pre>runParser (stringP <span class="pl-s"><span class="pl-pds">"</span>zendesk<span class="pl-pds">"</span></span>) <span class="pl-s"><span class="pl-pds">"</span>zendesk is cool<span class="pl-pds">"</span></span>
+runParser (stringP <span class="pl-s"><span class="pl-pds">"</span>zendesk<span class="pl-pds">"</span></span>) <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span></pre></div>
+<hr>
+<h2>
+<a id="user-content-change-the-value-of-an-existing-parser" class="anchor" href="#change-the-value-of-an-existing-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Change the value of an existing parser</h2>
+<p>Use andThen as an example</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">let</span> p1 <span class="pl-k">=</span> character <span class="pl-k">`andThen`</span> character
+<span class="pl-k">:</span>t p1 <span class="pl-c"><span class="pl-c">--</span> p1 :: Parser (Char, Char)</span></pre></div>
+<p>Parser (Char, Char) -&gt; Parser String</p>
+<p>Why not just use lift2 ?</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">mapP</span> <span class="pl-k">::</span> (<span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-smi">b</span>) <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">b</span>
+mapP f parserA <span class="pl-k">=</span>
+    <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span>
+        <span class="pl-k">case</span> runParser parserA input <span class="pl-k">of</span>
+            <span class="pl-ent"><span class="pl-c1">Left</span></span> e <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> e
+            <span class="pl-ent"><span class="pl-c1">Right</span></span> (a, rest) <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Right</span></span> (f a, rest)</pre></div>
+<h3>
+<a id="user-content-sample-data-for-mapp" class="anchor" href="#sample-data-for-mapp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Data for mapP</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">let</span> p1 <span class="pl-k">=</span> character <span class="pl-k">`andThen`</span> character
+<span class="pl-k">:</span>t p1 <span class="pl-c"><span class="pl-c">--</span> p1 :: Parser (Char, Char)</span>
+<span class="pl-k">let</span> p2 <span class="pl-k">=</span> mapP (<span class="pl-k">\</span>(c1, c2) <span class="pl-k">-&gt;</span> c1  <span class="pl-k">:</span> c2 <span class="pl-k">:</span> <span class="pl-c1">[]</span>) p1
+<span class="pl-k">:</span>t p2
+runParser p2 <span class="pl-s"><span class="pl-pds">"</span>ABCD<span class="pl-pds">"</span></span>
+
+<span class="pl-k">let</span> p2 <span class="pl-k">=</span> mapP (<span class="pl-k">\</span>(c1, c2) <span class="pl-k">-&gt;</span> c2  <span class="pl-k">:</span> c1 <span class="pl-k">:</span> <span class="pl-c1">[]</span>) p1
+runParser p2 <span class="pl-s"><span class="pl-pds">"</span>ABCD<span class="pl-pds">"</span></span></pre></div>
+<h2>
+<a id="user-content-running-a-parser-as-many-times-as-possible" class="anchor" href="#running-a-parser-as-many-times-as-possible" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running a parser as many times as possible</h2>
+<p>Get as many digits as possible</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">many</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> [<span class="pl-smi">a</span>]
+many parserA <span class="pl-k">=</span>
+    <span class="pl-k">let</span> fallback <span class="pl-k">=</span> pureP <span class="pl-c1">[]</span> <span class="pl-c"><span class="pl-c">--</span> we can use pureP</span>
+    <span class="pl-k">in</span> lift2 (<span class="pl-k">\</span>p r <span class="pl-k">-&gt;</span> p <span class="pl-k">:</span> r) parserA (many parserA) <span class="pl-k">`orElse`</span> fallback</pre></div>
+<p>We can also define pureP as part of this</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">pureP</span> <span class="pl-k">::</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span>
+pureP a <span class="pl-k">=</span> <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Right</span></span> (a, input)</pre></div>
+<h3>
+<a id="user-content-sample-data-for-many" class="anchor" href="#sample-data-for-many" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Data for many</h3>
+<div class="highlight highlight-source-haskell"><pre>runParser (many digit) <span class="pl-s"><span class="pl-pds">"</span>1234543534543ABNCD<span class="pl-pds">"</span></span>
+runParser (many digit) <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> Still passes</span></pre></div>
+<h2>
+<a id="user-content-running-a-parser-at-least-one-or-more-times" class="anchor" href="#running-a-parser-at-least-one-or-more-times" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running a parser at least one or more times</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">many1</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> [<span class="pl-smi">a</span>]
+many1 parserA <span class="pl-k">=</span> lift2 (<span class="pl-k">\</span>p r <span class="pl-k">-&gt;</span> p <span class="pl-k">:</span> r) parserA (many parserA)</pre></div>
+<h3>
+<a id="user-content-sample-data-for-many1" class="anchor" href="#sample-data-for-many1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Data for many1</h3>
+<div class="highlight highlight-source-haskell"><pre>runParser (many1 digit) <span class="pl-s"><span class="pl-pds">"</span>1234543534543ABNCD<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> passes</span>
+runParser (many1 digit) <span class="pl-s"><span class="pl-pds">"</span>1A234543534543ABNCD<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> fails</span>
+runParser (many1 digit) <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> fails</span></pre></div>
+<h2>
+<a id="user-content-ignoring-the-result-of-the-first-parser" class="anchor" href="#ignoring-the-result-of-the-first-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ignoring the result of the first parser</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">ignoreFirst</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">b</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">b</span>
+ignoreFirst parserA parserB <span class="pl-k">=</span> lift2 (<span class="pl-k">\</span>_ b <span class="pl-k">-&gt;</span> b) parserA parserB</pre></div>
+<h3>
+<a id="user-content-sample-data-for-ignorefirst" class="anchor" href="#sample-data-for-ignorefirst" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Data for ignoreFirst</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">let</span> p1 <span class="pl-k">=</span> (many digit) <span class="pl-k">`ignoreFirst`</span> (many lowercase)
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>1234234abcdf%#$%@#<span class="pl-pds">"</span></span></pre></div>
+<h2>
+<a id="user-content-ignoring-the-result-of-the-second-parser" class="anchor" href="#ignoring-the-result-of-the-second-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ignoring the result of the second parser</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">ignoreSecond</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">b</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span>
+ignoreSecond parserA parserB <span class="pl-k">=</span> lift2 (<span class="pl-k">\</span>a _ <span class="pl-k">-&gt;</span> a) parserA parserB</pre></div>
+<h3>
+<a id="user-content-sample-data-for-ignoresecond" class="anchor" href="#sample-data-for-ignoresecond" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Data for ignoreSecond</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">let</span> p1 <span class="pl-k">=</span> (many digit) <span class="pl-k">`ignoreSecond`</span> (many lowercase)
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>1234234abcdf%#$%@#<span class="pl-pds">"</span></span></pre></div>
+<hr>
+<h2>
+<a id="user-content-convert-a-string---int" class="anchor" href="#convert-a-string---int" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Convert a String -&gt; Int</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">numbers</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-en"><span class="pl-c1">Int</span></span>
+numbers parserStr <span class="pl-k">=</span>
+  <span class="pl-k">let</span> convertToInt <span class="pl-k">::</span> <span class="pl-en"><span class="pl-c1">String</span></span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-en"><span class="pl-c1">Int</span></span>
+  <span class="pl-k">let</span> convertToInt str <span class="pl-k">=</span>
+        <span class="pl-k">case</span> readMaybe str <span class="pl-k">of</span>
+          <span class="pl-ent">Just</span> n  <span class="pl-k">-&gt;</span> pureP n
+          <span class="pl-ent">Nothing</span> <span class="pl-k">-&gt;</span> failP <span class="pl-k">$</span> <span class="pl-s"><span class="pl-pds">"</span>Could not convert <span class="pl-pds">"</span></span> <span class="pl-k">&lt;&gt;</span> str <span class="pl-k">&lt;&gt;</span> <span class="pl-s"><span class="pl-pds">"</span> into a number<span class="pl-pds">"</span></span>
+  <span class="pl-k">in</span> parserString <span class="pl-k">`bindP`</span> convertToInt <span class="pl-c"><span class="pl-c">--</span> we need something that takes these two things</span></pre></div>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">bindP</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> (<span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">b</span>) <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">b</span>
+bindP parserA f <span class="pl-k">=</span>
+  <span class="pl-ent">Parser</span> <span class="pl-k">$</span> <span class="pl-k">\</span>input <span class="pl-k">-&gt;</span>
+    <span class="pl-k">case</span> runParser parserA input <span class="pl-k">of</span>
+      <span class="pl-ent"><span class="pl-c1">Left</span></span> e <span class="pl-k">-&gt;</span> <span class="pl-ent"><span class="pl-c1">Left</span></span> e
+      <span class="pl-ent"><span class="pl-c1">Right</span></span> (a, restA) <span class="pl-k">-&gt;</span>
+        <span class="pl-k">let</span> parserB <span class="pl-k">=</span> f a
+        <span class="pl-k">in</span> runParser parserB restA</pre></div>
+<h3>
+<a id="user-content-sample-data-for-bindp" class="anchor" href="#sample-data-for-bindp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Data for bindP</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">let</span> p1 <span class="pl-k">=</span> many character
+<span class="pl-k">:</span>t p1
+<span class="pl-k">let</span> p2 <span class="pl-k">=</span> numbers p1
+<span class="pl-k">:</span>t p2
+
+runParser p2  <span class="pl-s"><span class="pl-pds">"</span>1234<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> success</span>
+runParser p2  <span class="pl-s"><span class="pl-pds">"</span>1A234<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> failure</span>
+runParser p2  <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> failure</span></pre></div>
+<h2>
+<a id="user-content-optionally-parsing-a-value" class="anchor" href="#optionally-parsing-a-value" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Optionally parsing a value</h2>
+<p>We want success when the parser does not match</p>
+<p>start with the <code>orElse</code> case</p>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">opt</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> (<span class="pl-en"><span class="pl-c1">Maybe</span></span> <span class="pl-smi">a</span>)
+opt parserA <span class="pl-k">=</span>  mapP <span class="pl-ent">Just</span> parserA <span class="pl-k">`orElse`</span> pureP <span class="pl-ent">Nothing</span></pre></div>
+<h3>
+<a id="user-content-sample-data-for-optionally-parsing-a-value" class="anchor" href="#sample-data-for-optionally-parsing-a-value" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for optionally parsing a value</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-k">let</span> p1 <span class="pl-k">=</span> many1 digit
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>1234<span class="pl-pds">"</span></span>    <span class="pl-c"><span class="pl-c">--</span> Parser (1234)</span>
+runParser p1 <span class="pl-s"><span class="pl-pds">"</span>ABC1234<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> Failure</span>
+
+runParser (opt p1) <span class="pl-s"><span class="pl-pds">"</span>1234<span class="pl-pds">"</span></span>    <span class="pl-c"><span class="pl-c">--</span> Parser (Just 1234)</span>
+runParser (opt p1) <span class="pl-s"><span class="pl-pds">"</span>ABC1234<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> Parser Nothing</span></pre></div>
+<h2>
+<a id="user-content-partially-applying-a-parser" class="anchor" href="#partially-applying-a-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Partially applying a Parser</h2>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-en">applyP</span> <span class="pl-k">::</span> <span class="pl-en">Parser</span> (<span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-smi">b</span>) <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">a</span> <span class="pl-k">-&gt;</span> <span class="pl-en">Parser</span> <span class="pl-smi">b</span>
+applyP parserAB parserA <span class="pl-k">=</span> lift2 (<span class="pl-k">\</span>f a <span class="pl-k">-&gt;</span> f a) parserAB parserA</pre></div>
+<h3>
+<a id="user-content-sample-data-for-partially-applying-a-function-within-a-parser" class="anchor" href="#sample-data-for-partially-applying-a-function-within-a-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample data for partially applying a function within a Parser</h3>
+<div class="highlight highlight-source-haskell"><pre><span class="pl-c"><span class="pl-c">--</span>- create person</span>
+<span class="pl-k">:</span>t <span class="pl-ent">Person</span> <span class="pl-c"><span class="pl-c">--</span> Person :: String -&gt; String -&gt; Int -&gt; Person</span>
+<span class="pl-ent">Person</span> <span class="pl-s"><span class="pl-pds">"</span>Jo<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>Blogs<span class="pl-pds">"</span></span> <span class="pl-c1">25</span>
+
+<span class="pl-c"><span class="pl-c">--</span> partially apply</span>
+<span class="pl-k">:</span>t <span class="pl-ent">Person</span> <span class="pl-s"><span class="pl-pds">"</span>Jo<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span>Blogs<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">--</span> Person "Jo" "Blogs" :: Int -&gt; Person</span>
+
+<span class="pl-k">let</span> nameP <span class="pl-k">=</span> (many space) <span class="pl-k">`ignoreFirst`</span> (many1 (lowercase <span class="pl-k">`orElse`</span> uppercase))
+<span class="pl-k">let</span> ageP <span class="pl-k">=</span> (many space) <span class="pl-k">`ignoreFirst`</span> (numbers <span class="pl-k">$</span> many1 digit)
+<span class="pl-k">let</span> personP <span class="pl-k">=</span> (pureP <span class="pl-ent">Person</span>) <span class="pl-k">`applyP`</span> nameP <span class="pl-k">`applyP`</span> nameP <span class="pl-k">`applyP`</span> ageP
+
+runParser personP <span class="pl-s"><span class="pl-pds">"</span>Jo Blogs 25 whatever<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">--</span>- Alternatives</span>
+
+<span class="pl-k">let</span> p3 <span class="pl-k">=</span> lift2 <span class="pl-ent">Person</span> nameP nameP
+<span class="pl-k">:</span>t p3 <span class="pl-c"><span class="pl-c">--</span> Parser (Int -&gt; Person)</span>
+
+<span class="pl-c"><span class="pl-c">--</span> we can't use mapP because we need to use two parsers here p3 + ageP</span>
+<span class="pl-k">let</span> p4 <span class="pl-k">=</span> lift2 (<span class="pl-k">\</span>f a <span class="pl-k">-&gt;</span> f a) p3 ageP
+
+runParser p4 <span class="pl-s"><span class="pl-pds">"</span>Jo Blogs 25 whatever<span class="pl-pds">"</span></span></pre></div>
+</article></body></html>
