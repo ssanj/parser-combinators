@@ -1,7 +1,6 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE InstanceSigs #-}
 
--- Don't export anything because it will clash with Lib
 module Solution where
 
 import Text.Read (readMaybe)
