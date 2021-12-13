@@ -1,8 +1,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE InstanceSigs #-}
 
--- Don't export anything because it will clash with Lib
-module Solution() where
+module Solution where
 
 import Text.Read (readMaybe)
 import qualified Control.Applicative as A
@@ -182,13 +181,6 @@ applyP :: Parser (a -> b) -> Parser a -> Parser b
 applyP parserAB parserA = lift2 (\f a -> f a) parserAB parserA
 
 
--- Write a parser that parses the following
-data Person = Person { name :: String, surname:: String, age :: Int } deriving Show
-
--- data Person = Person { name :: String, surname :: String, age :: Int}
--- > "Jo Blogs 25 blah"
-
-
 -- Extra
 
 -- Create an instance of Functor for Parser
@@ -227,8 +219,14 @@ instance Monad Parser where
     (>>=) = bindP
 
 
-parserPerson :: Parser Person
-parserPerson =
+-- Write a parser that parses the following
+data Person = Person { name :: String, surname:: String, age :: Int } deriving Show
+
+-- data Person = Person { name :: String, surname :: String, age :: Int}
+
+-- Input: "   Joe Blogs 25 Is a nice guy"
+personParser :: Parser Person
+personParser =
     let nameP = (many space) `ignoreFirst` (many1 (lowercase `orElse` uppercase))
         ageP = (many space) `ignoreFirst` (numbers $ many1 digit)
     in
@@ -237,7 +235,4 @@ parserPerson =
             surname <- nameP
             age     <- ageP
             return $ Person name surname age
-
-
-
 
